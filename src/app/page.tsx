@@ -380,10 +380,12 @@ export default function Home() {
       if (data.url) {
         window.location.href = data.url;
       } else {
-        console.error('Erro ao criar sessão de checkout');
+        alert('Erro ao criar sessão de checkout. Por favor, tente novamente.');
+        console.error('Erro ao criar sessão de checkout:', data);
         setLoadingPlan(null);
       }
     } catch (error) {
+      alert('Erro ao processar pagamento. Por favor, tente novamente.');
       console.error('Erro:', error);
       setLoadingPlan(null);
     }
